@@ -95,7 +95,6 @@
 		<script src="{{asset('assets/js/custom/utilities/modals/upgrade-plan.js')}}"></script>
 		<script src="{{asset('assets/js/custom/utilities/modals/create-app.js')}}"></script>
 		<script src="{{asset('assets/js/custom/utilities/modals/users-search.js')}}"></script>
-		<script src="{{asset('js/dropdown/dropdown.js')}}"></script>
 		<script src="https://cdn.datatables.net/plug-ins/1.12.1/dataRender/datetime.js"></script>
 		<script src="{{asset('js/moment-with-locales.js')}}"></script>
 		<script src="{{asset('js/moment.js')}}"></script>

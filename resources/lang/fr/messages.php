@@ -137,29 +137,16 @@ return[
         //End:options select 2
     //End:modale form 1 kadiya
     // Begin:Table Audience 
-        "statutAudience" =>"Statut",
-        "commentairesAudience"=>"Commentaires",
-        "rapportAudience"=>"Rapport",
-
-        "jugementAudience"=>"Jugement",
-        "sujetAudience"=>"Sujet",
-        "degree_cont_labelAudience"=>"Degré de contentieux",
-        "notes"=>"notes",
-        "cat"=>"cat",
-        "deleted_at"=>" supprime à",
-        "libelleAudience"=>"Libelle",
-        "salleAudience"=>" Salle",
-        "date_nextAudience"=>"Date de la prochaine audience",  
-
         "natureAudience"=>"La nature",
         "clientAudience"=>"Nom du client",
         "numero_jugeAudience"=>"Le numéro du procès",
-        "typeDossierAudience"=>"Type de fichier",
+        "typeDossierAudience"=>"Type de dossier",
         "populaireAudience"=>"Populaire",
         "juge_decideurAudience"=>"Jugement decideur",
         "natureSeanceAudience"=>"Nature de la séance",
         "resultatSeanceAudience"=>"Le résultat de la séance",
         "dateAudience" =>"Date de la séance", 
+        "salleAudience"=>" Salle",
     //End:Table Audience
     //Begin:Titre des pages
     "liste_reports"=> "Liste des rapports",
@@ -171,5 +158,13 @@ return[
     "liste_email"=> "Liste des Email",
     "liste_archives"=> "Liste d'archive",
     //End:Titre des pages 
+    // Begin:Table Procedure
+    "dateProcedure"=>"Date de la procédure",
+    "clientProcedure"=>"Nom du client",
+    "numero_jugeProcedure"=>"Le numéro du procès",
+    "procedureProcedure"=>"Procédure",
+    "typeDossierProcedure"=>"Type de dossier",
+    "populaireProcedure"=>"Populaire",
+    //End:Table Procedure
 ]
 ?>

@@ -145,6 +145,7 @@ return [
     "natureSeanceAudience"=>"طبيعة الجلسة",
     "resultatSeanceAudience"=>"مآل الجلسة",
     "dateAudience" =>"تاريخ الجلسة ",
+    "salleAudience"=>" Salle",
 //End:Table Audience
 //Begin:Titre des pages
     "liste_reports"=> "لائحة التقارير",
@@ -159,5 +160,13 @@ return [
 //Begin:Page annuaireTelephonique
 
 //End:Page annuaireTelephonique
+// Begin:Table Procedure
+"dateProcedure"=>"تاريخ الاجراء",
+"clientProcedure"=>"اسم الموكل",
+"numero_jugeProcedure"=>"رقم القضية",
+"procedureProcedure"=>"الاجراء",
+"typeDossierProcedure"=>"نوع الملف",
+"populaireProcedure"=>"الرائج",
+//End:Table Procedure
 ]
 ?>

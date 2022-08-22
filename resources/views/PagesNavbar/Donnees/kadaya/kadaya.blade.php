@@ -66,6 +66,6 @@
     @endsection
 
     @push('scripts')
-    <script type="text/javascript" src="{{ asset('assets/js/jsTable.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/dossierJS/updateDossier.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/DossierJS/jsTable.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/DossierJS/updateDossier.js')}}"></script>
     @endpush
