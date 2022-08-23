@@ -34,7 +34,7 @@ var KTDatatablesServerSide = function () {
                 { data: 'tribunal.nom_ar', defaultContent: "" },
                 { data: 'nature_dossier.nature_ar', defaultContent: "" },
                 { data: 'sujet' },
-                { data: 'date_dossier_bureau' ,type: 'date-dd-mmm-yyyy', targets: 0 },
+                { data: 'date_dossier_bureau'},
                 { data: null },
             ],    
             columnDefs: [

@@ -161,12 +161,12 @@ return [
 
 //End:Page annuaireTelephonique
 // Begin:Table Procedure
-"dateProcedure"=>"تاريخ الاجراء",
-"clientProcedure"=>"اسم الموكل",
-"numero_jugeProcedure"=>"رقم القضية",
-"procedureProcedure"=>"الاجراء",
-"typeDossierProcedure"=>"نوع الملف",
-"populaireProcedure"=>"الرائج",
+    "dateProcedure"=>"تاريخ الاجراء",
+    "clientProcedure"=>"اسم الموكل",
+    "numero_jugeProcedure"=>"رقم القضية",
+    "procedureProcedure"=>"الاجراء",
+    "typeDossierProcedure"=>"نوع الملف",
+    "populaireProcedure"=>"الرائج",
 //End:Table Procedure
 ]
 ?>

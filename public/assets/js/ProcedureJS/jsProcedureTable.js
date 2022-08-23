@@ -10,10 +10,11 @@ var KTDatatablesServerSide = function () {
     // Private functions
     var initDatatable = function () {
     
-        dt = $("#kt_datatable_example_audience").DataTable({
+        dt = $("#kt_datatable_example_procedure").DataTable({
             searchDelay: 500,
             processing: false,
             serverSide: false,
+            autoWidth: false,
             order: [[5, 'desc']],
             stateSave: true,
             select: {
@@ -22,26 +23,16 @@ var KTDatatablesServerSide = function () {
                 className: 'row-selected'
             },
             ajax: {
-                url: "http://127.0.0.1:8000/api/audiences",
+                url: "http://127.0.0.1:8000/api/procedures",
             },
             columns: [
                 { data: null },
-                { data: 'id_audience' },
-                { data: 'id_dossier' },
-                { data: 'date_debut' ,defaultContent: ""},
-                { data: "statut" ,defaultContent: ""},
-                { data: 'commentaires' ,defaultContent: ""},
-                { data: 'rapport' ,defaultContent: ""},        
-                { data: 'jugement' ,defaultContent: ""},
-                { data: 'libelle' ,defaultContent: ""},
-                { data: 'deleted_at' ,defaultContent: ""},
-                { data: 'salle' ,defaultContent: ""},
-                { data: 'id_juge_decideur' ,defaultContent: ""},
-                // { data: 'id_marqueur' ,defaultContent: ""},
-                { data: 'date_next_audience' ,defaultContent: ""},
-                { data: 'id_type' ,defaultContent: ""},
-                { data: 'notes' ,defaultContent: ""},
-                // { data: 'cat' ,defaultContent: ""},
+                { data: 'date_proc' ,defaultContent: ""},
+                { data: 'dossier.client.nom' ,defaultContent: ""},
+                { data: "dossier.num_dossier_1" ,defaultContent: ""},
+                { data: 'procedure' ,defaultContent: ""},
+                { data: 'dossier.nature_dossier.nature_ar' ,defaultContent: ""},        
+                { data: 'dossier.tribunal.nom_ar' ,defaultContent: ""},
                 { data: null },
             ],    
             columnDefs: [
@@ -51,7 +42,7 @@ var KTDatatablesServerSide = function () {
                     render: function (data) {
                         return `
                             <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                <input class="form-check-input" type="checkbox" value="${data.id_audience}" />
+                                <input class="form-check-input" type="checkbox" value="${data.id}" />
                             </div>`;
                     }
                 },
@@ -66,13 +57,13 @@ var KTDatatablesServerSide = function () {
                             <div class="row g-0">
                                 <!--begin::Menu item-->
                                 <div class="col-sm-6 col-md-8">
-                                    <a href="#" class="menu-link px-3" data-kt-docs-table-filter="edit_row" data-bs-toggle="modal" data-bs-whatever="${data.id_audience}" >
-                                        <i id="updateDossier" class="edit fa-solid fa-marker fa-2x"></i>                                    
+                                    <a href="#" class="menu-link px-3" data-kt-docs-table-filter="edit_row" data-bs-toggle="modal" data-bs-whatever="${data.id}" >
+                                        <i class="edit fa-solid fa-marker fa-1x" style="color:#EBAC3A"></i>                                  
                                     </a>
                                 </div>
                                 <div class="col-6 col-md-4">
                                     <a href="delete_audience" class="menu-link px-3" data-kt-docs-table-filter="delete_row">
-                                        <i class="delete fa-solid fa-trash-can fa-2x  style="color:read"></i>
+                                        <i class="delete fa-solid fa-trash-can fa-1x"  style="color:#E55B79"></i>
                                     </a>
                                 </div>
                                 <!--end::Menu item-->
@@ -84,7 +75,7 @@ var KTDatatablesServerSide = function () {
             ],
             // Add data-filter attribute
             createdRow: function (row, data, dataIndex) {
-                $(row).find('td:eq(4)').attr('data-filter', data.CreditCardType);
+                $(row).find('td:eq(4)').attr('data-filter', data.dossier.client.nom);
             }
         });
 
@@ -181,15 +172,15 @@ var KTDatatablesServerSide = function () {
                         }).then(function () {
                             console.log(id);
                             $.ajax({
-                                url: 'delete_audience',
+                                url: 'delete_procedure',
                                 type: 'DELETE',
                                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
                                 data: 'id=' + id,
                                 success: function(data) {                                    
                                     if (data['success']) {
-                                        success_toast(".تم حذف القضية بنجاح");
+                                        success_toast(".تم حذف الإجراء بنجاح");
                                         Swal.fire({
-                                            text: "!بنجاح "  + id + " لقد قمت بحذف القضية رقم",
+                                            text: "!بنجاح "  + id + " لقد قمت بحذف الإجراء رقم",
                                             icon: "success",
                                             buttonsStyling: false,
                                             confirmButtonText: "!" + "حسنًا ، شكرا",
@@ -201,7 +192,7 @@ var KTDatatablesServerSide = function () {
                                             dt.page( 'next' ).draw( 'page' );
                                         });
                                     } else if (data['error']) {
-                                        error_toast("!خطأ أثناء حذف معلومات القضية");
+                                        error_toast("!خطأ أثناء حذف معلومات الإجراء");
                                     } else {
                                         error_toast('!!عذرًا ، حدث خطأ ما');
                                     }
@@ -249,7 +240,7 @@ var KTDatatablesServerSide = function () {
     var initToggleToolbar = function () {
         // Toggle selected action toolbar
         // Select all checkboxes
-        const container = document.querySelector('#kt_datatable_example_audience');
+        const container = document.querySelector('#kt_datatable_example_procedure');
         const checkboxes = container.querySelectorAll('[type="checkbox"]');
 
         // Select elements
@@ -363,7 +354,7 @@ var KTDatatablesServerSide = function () {
     // Toggle toolbars
     var toggleToolbars = function () {
         // Define variables
-        const container = document.querySelector('#kt_datatable_example_audience');
+        const container = document.querySelector('#kt_datatable_example_procedure');
         const toolbarBase = document.querySelector('[data-kt-docs-table-toolbar="base"]');
         const toolbarSelected = document.querySelector('[data-kt-docs-table-toolbar="selected"]');
         const selectedCount = document.querySelector('[data-kt-docs-table-select="selected_count"]');

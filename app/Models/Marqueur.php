@@ -17,4 +17,9 @@ class Marqueur extends Model
         return $this->hasMany(Audience::class, 'id_marqueur','id_marqueur');
     }
 
+    public function procedure_dossiers()
+    {
+        return $this->hasMany(Procedure_dossier::class, 'id_marqueur','id_marqueur');
+    }
+
 }

@@ -1,6 +1,6 @@
 @extends('master')
 
-    @section('title', "kadaya")
+    @section('title', 'Procédure')
     @section('head')
     <link href="{{asset('assets/css/styleSelect.css')}}" rel="stylesheet" type="text/css" />
     @endsection
@@ -34,23 +34,20 @@
         </div>
         <!--end::Wrapper-->
         <!--begin::Datatable-->
-        <table id="kt_datatable_example_1" class="table align-middle table-row-dashed fs-6 gy-5">
+        <table id="kt_datatable_example_procedure" class="table align-middle table-row-dashed fs-6 gy-5">
             <thead>
                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                     <th class="w-10px pe-2">
                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                            <input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_datatable_example_1 .form-check-input" value="1"/>
+                            <input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_datatable_example_procedure .form-check-input" value="1"/>
                         </div>
                     </th>
-                    <th>{{ __('messages.numero_archive')}}</th>
-                    <th>{{ __('messages.categorie')}}</th>
-                    <th>{{ __('messages.client_name')}}</th>
-                    <th>{{ __('messages.juge_decideur')}}</th>
-                    <th>{{ __('messages.step')}}</th>
-                    <th>{{ __('messages.judicial_authority')}}</th>
-                    <th>{{ __('messages.case_type')}}</th>
-                    <th>{{ __('messages.topic')}}</th>
-                    <th>{{ __('messages.office_file_history')}}</th> 
+                    <th>{{ __('messages.dateProcedure')}}</th>
+                    <th>{{ __('messages.clientProcedure')}}</th>
+                    <th>{{ __('messages.numero_jugeProcedure')}}</th>
+                    <th>{{ __('messages.procedureProcedure')}}</th>
+                    <th>{{ __('messages.typeDossierProcedure')}}</th>
+                    <th>{{ __('messages.populaireProcedure')}}</th>
                     <th class="text-end min-w-100px">{{ __('messages.processes')}}</th>
                 </tr>
             </thead>
@@ -66,6 +63,6 @@
     @endsection
 
     @push('scripts')
-    <!-- <script type="text/javascript" src="{{ asset('assets/js/jsTable.js')}}"></script> -->
-    <script type="text/javascript" src="{{ asset('js/dossierJS/updateDossier.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/ProcedureJS/jsProcedureTable.js')}}"></script> 
+    <!-- <script type="text/javascript" src="{{ asset('assets/js/ProcedureJS/updateProcedure.js')}}"></script> -->
     @endpush

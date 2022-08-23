@@ -27,7 +27,7 @@
 		<link href="assets/plugins/global/{{__('messages.cssPlAr')}}" rel="stylesheet" type="text/css" />
 		<link href="assets/css/{{__('messages.cssAR')}}" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
-		<link href="{{asset('plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css"/>
+		<link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<!--begin::newCss-->
 		@yield('head')

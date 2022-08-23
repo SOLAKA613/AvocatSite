@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Audience;
 use Illuminate\Http\Request;
+use Exception;
 
 class AudienceController extends Controller
 {

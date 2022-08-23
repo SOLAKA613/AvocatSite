@@ -11,8 +11,6 @@
     color: #2d2e34;
     margin-top: 10px; 
 }
-i.edit:hover {color: #FFC700;}
-i.delete:hover {color: #D9214E;}
 
 label[for='CliForm1'],label[for='CaraPrincipalForm1'],label[for='id_opposant'],label[for='id_client'],
 label[for='id_position_client'],label[for='position_opposant'],label[for='date_dossier_bureau'],

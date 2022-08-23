@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Audience;
 use Illuminate\Http\Request;
-use App\Models\Dossier;
+use App\Models\Procedure_dossier;
 use Exception;
 
-class ControllerApiAudience extends Controller
+class ControllerApiProcedure extends Controller
 {
 
-    public function listAudiences(){
+    public function listProcedures(){
         try{
-             $audiences = Audience::with(['dossier',"Juge","Marqueur"])->get();
+            $procedures = Procedure_dossier::with(['Dossier'=>function ($q){
+                $q->with('Client','Nature_dossier','Tribunal');},'Marqueur'])->get();
             return response()->json([
-                'data' => $audiences
+                'data' => $procedures
             ]);
         }catch(Exception $e){
-            return  $e->getMessage();
+            return  $e->getMessage();                                                                   
         }   
     }
 

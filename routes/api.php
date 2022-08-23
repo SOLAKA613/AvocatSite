@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('audiences','Api\ControllerApiAudience@listAudiences');
 Route::get('dossiers','Api\ControllerApiKadaya@listDossiers');
+Route::get('procedures','Api\ControllerApiProcedure@listProcedures');
 Route::get('jugements','Api\ControllerApiJuge@listJuges');
 Route::get('avocats','Api\ControllerApiAvocat@listAvocats');
 

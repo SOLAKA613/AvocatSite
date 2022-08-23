@@ -16,5 +16,8 @@ class Procedure_dossier extends Model
         return $this->belongsTo(Dossier::class, 'id_dossier', 'id_dossier');
     }
 
-    
+    public function Marqueur()
+    {
+        return $this->belongsTo(Marqueur::class, 'id_marqueur','id_marqueur');
+    }
 }
